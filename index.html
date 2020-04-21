@@ -1,0 +1,356 @@
+﻿<!DOCTYPE html>
+<html lang="es-col">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<!-- Bootstrap core CSS -->
+		<!-- <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+		<!-- Custom styles for this template -->
+		<link href="assets/css/form-validation.css" rel="stylesheet" />
+		<link href="assets/css/estilos.css" rel="stylesheet" />
+	</head>
+	<body class="bg-light">
+		<div class="contGen wh-register">
+			<div class="text-center marg-titulo">
+				<p class="txt-titulo">Calcula tu riesgo cardiovascular</p>
+			</div>
+			<hr class="mb-4" />
+			<section class="seccion-ini">
+				<div class="sizePage">
+					<div class="text-center">
+						<p class="txt-subtit">
+							El riesgo cardiovascular indica las posibilidades que tienes de
+							sufrir alguna enfermedad cardiaca según tus antecedentes y hábitos
+							de vida.
+						</p>
+					</div>
+					<div class="restrictsize formulario">
+						<div class="row">
+							<div class="col-md-12">
+								<form
+									class="needs-validation marg-form"
+									novalidate
+									onsubmit="return false"
+								>
+									<div class="row mb-3">
+										<div class="label-form col-sm-6">
+											<label for="nombre">¿Eres diabético?</label>
+										</div>
+										<div class="col-sm-6">
+											<div class="input-group">
+												<div
+													class="custom-control custom-radio custom-control-inline"
+												>
+													<input
+														id="si1"
+														name="radio-diabetico"
+														type="radio"
+														class="custom-control-input"
+														value="si"
+														required
+													/>
+													<label class="custom-control-label" for="si1"
+														>Si</label
+													>
+												</div>
+												<div
+													class="custom-control custom-radio custom-control-inline"
+												>
+													<input
+														id="no1"
+														name="radio-diabetico"
+														type="radio"
+														class="custom-control-input"
+														value="no"
+														checked
+														required
+													/>
+													<label class="custom-control-label" for="no1"
+														>No</label
+													>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row mb-3">
+										<div class="label-form col-sm-6">
+											<label for="nombre"
+												>¿Has sufrido alguna enfermedad cardiovascular?</label
+											>
+										</div>
+										<div class="col-sm-6">
+											<div class="input-group">
+												<div
+													class="custom-control custom-radio custom-control-inline"
+												>
+													<input
+														id="si2"
+														name="radio-enfermo"
+														type="radio"
+														class="custom-control-input"
+														value="si"
+														required
+													/>
+													<label class="custom-control-label" for="si2"
+														>Si</label
+													>
+												</div>
+												<div
+													class="custom-control custom-radio custom-control-inline"
+												>
+													<input
+														id="no2"
+														name="radio-enfermo"
+														type="radio"
+														class="custom-control-input"
+														value="no"
+														checked
+														required
+													/>
+													<label class="custom-control-label" for="no2"
+														>No</label
+													>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row mb-3">
+										<div class="label-form col-sm-6">
+											<label for="nombre">¿Fumas?</label>
+										</div>
+										<div class="col-sm-6">
+											<div class="input-group">
+												<div
+													class="custom-control custom-radio custom-control-inline"
+												>
+													<input
+														id="si3"
+														name="radio-fumador"
+														type="radio"
+														class="custom-control-input"
+														value="si"
+														required
+													/>
+													<label class="custom-control-label" for="si3"
+														>Si</label
+													>
+												</div>
+												<div
+													class="custom-control custom-radio custom-control-inline"
+												>
+													<input
+														id="no3"
+														name="radio-fumador"
+														type="radio"
+														class="custom-control-input"
+														value="no"
+														checked
+														required
+													/>
+													<label class="custom-control-label" for="no3"
+														>No</label
+													>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row mb-3">
+										<div class="label-form col-sm-6">
+											<label for="sel-hora">Colesterol total:</label>
+										</div>
+										<div class="col-sm-6">
+											<select
+												class="custom-select d-block w-100"
+												id="sel-colesterol"
+												required
+											>
+												<option value="">Seleccione...</option>
+												<option value="1">Menos de 150</option>
+												<option value="2">Entre 150 y 199</option>
+												<option value="3">Entre 200 y 249</option>
+												<option value="4">Entre 250 y 299</option>
+												<option value="5">300 y más</option>
+											</select>
+											<div class="invalid-feedback">
+												Por favor, seleccione una opción.
+											</div>
+										</div>
+									</div>
+									<div class="row mb-3">
+										<div class="label-form col-sm-6">
+											<label for="sel-hora">Tensión sistólica:</label>
+										</div>
+										<div class="col-sm-6">
+											<select
+												class="custom-select d-block w-100"
+												id="sel-tension"
+												required
+											>
+												<option value="">Seleccione...</option>
+												<option value="1">Entre 100 y 119</option>
+												<option value="2">Entre 120 y 139</option>
+												<option value="3">Entre 140 y 159</option>
+												<option value="4">Entre 160 y 179</option>
+												<option value="5">180 y más</option>
+											</select>
+											<div class="invalid-feedback">
+												Por favor, seleccione una opción.
+											</div>
+										</div>
+									</div>
+									<div class="row mb-3">
+										<div class="label-form col-sm-6">
+											<label for="nombre">Sexo:</label>
+										</div>
+										<div class="col-sm-6">
+											<div class="input-group">
+												<div
+													class="custom-control custom-radio custom-control-inline"
+												>
+													<input
+														id="hombre"
+														name="radio-genero"
+														type="radio"
+														class="custom-control-input"
+														value="hombre"
+														checked
+														required
+													/>
+													<label class="custom-control-label" for="hombre"
+														>Hombre</label
+													>
+												</div>
+												<div
+													class="custom-control custom-radio custom-control-inline"
+												>
+													<input
+														id="mujer"
+														name="radio-genero"
+														type="radio"
+														class="custom-control-input"
+														value="mujer"
+														required
+													/>
+													<label class="custom-control-label" for="mujer"
+														>Mujer</label
+													>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row mb-3">
+										<div class="label-form col-sm-6">
+											<label for="celular">Edad:</label>
+										</div>
+										<div class="col-sm-6">
+											<input
+												type="number"
+												class="form-control cust-inp"
+												id="input-edad"
+												min="18"
+												max="100"
+												placeholder=""
+												required
+											/>
+											<div class="invalid-feedback">
+												Por favor, ingrese una edad válida (Entre 18 y 100
+												años).
+											</div>
+										</div>
+									</div>
+
+									<button
+										class="btn btn-primary btn-md btn-block btn-reg"
+										type="submit"
+									>
+										Calcular
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="seccion-cierre" style="display: none;">
+				<div class="sizePage2">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="text-center">
+								<p class="txt-subtit">Tu resultado:</p>
+								<p class="txt-resultado"></p>
+								<p class="txt-descrip-res"></p>
+							</div>
+
+							<a href="." class="btn btn-primary btn-md btn-block btn-reg"
+								>Volver</a
+							>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- Bootstrap core JavaScript
+    ================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"
+		></script>
+		<script src="js/main.js"></script>
+		<script>
+			// Example starter JavaScript for disabling form submissions if there are invalid fields
+			(function () {
+				'use strict';
+
+				window.addEventListener(
+					'load',
+					function () {
+						// Fetch all the forms we want to apply custom Bootstrap validation styles to
+						var forms = document.getElementsByClassName('needs-validation');
+
+						// Loop over them and prevent submission
+						var validation = Array.prototype.filter.call(forms, function (
+							form
+						) {
+							form.addEventListener(
+								'submit',
+								function (event) {
+									if (form.checkValidity() === false) {
+										event.preventDefault();
+										event.stopPropagation();
+									} else {
+										CalcularRiesgoCardio();
+									}
+									form.classList.add('was-validated');
+								},
+								false
+							);
+						});
+					},
+					false
+				);
+			})();
+		</script>
+	</body>
+</html>

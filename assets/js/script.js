@@ -47,27 +47,11 @@
 								form.sexoBiologico.value
 							);
 
-							$('.txt-resultado').text('Nivel ' + resultado);
-							var textoResultado = '';
-							switch (1) {
-								case 1:
-									textoResultado = '¡Tu riesgo es ---!';
-									break;
-								case 2:
-									textoResultado = '¡Tu riesgo es medio!';
-									break;
-								case 3:
-									textoResultado = '¡Tu riesgo es alto!';
-									break;
-								case 4:
-									textoResultado = '¡Tu riesgo es crítico!';
-									break;
-								default:
-									console.log('Error en resultado: ' + resultado);
-									return;
-							}
+							$('.txt-resultado').text(
+								`Tu riesgo de sufrir de una enfermedad cardiovascular dentro de 10 años es de :`
+							);
 
-							$('.txt-descrip-res').text(textoResultado);
+							$('.txt-descrip-res').text(`${resultado}%`);
 							MostrarPantallaCierre();
 						}
 						form.classList.add('was-validated');

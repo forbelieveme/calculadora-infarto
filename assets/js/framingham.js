@@ -1,13 +1,30 @@
-let edad = 70;
-let colesterol = 210;
-let presionSistolica = 140;
-let hdl = 40;
-// lipoproteínas de alta densidad (HDL)
-let medicina = false;
-let diabetes = false;
-let cigarrillo = true;
-let sexoBiologico = true;
-// femenino = true masculino = false
+// let edad = 70;
+// let colesterol = 210;
+// let presionSistolica = 140;
+// let hdl = 80;
+// // // lipoproteínas de alta densidad (HDL)
+// let medicina = true;
+// let diabetes = true;
+// let cigarrillo = true;
+// let sexoBiologico = false;
+// // femenino = true masculino = false
+
+// let form = {};
+
+// var formulario = document.getElementById('formulario');
+
+// function obtenerDatos() {
+// 	for (let i = 0; i < formulario.length - 1; i++) {
+// 		if (formulario.elements[i].checked) {
+// 			form[`${formulario.elements[i].name}`] = formulario.elements[i].value;
+// 			continue;
+// 		}
+// 		if (formulario.elements[i].type == 'number') {
+// 			form[`${formulario.elements[i].name}`] = formulario.elements[i].value;
+// 		}
+// 	}
+// 	console.log(`sucess`, form);
+// }
 
 let constantes = {
 	cteDiabetesMujer: 0.69154,
@@ -65,7 +82,7 @@ function calcularRiesgoInfarto(
 		let riesgo =
 			100 *
 			(1 - Math.pow(constantes.cteRiesgoMujer, Math.pow(Math.E, factorRiesgo)));
-		return riesgo;
+		return riesgo.toFixed(2);
 	} else if (!sexoBiologico) {
 		let varDiabetes = () => {
 			if (diabetes) return constantes.cteDiabetesHombre;
@@ -92,20 +109,25 @@ function calcularRiesgoInfarto(
 			100 *
 			(1 -
 				Math.pow(constantes.cteRiesgoHombre, Math.pow(Math.E, factorRiesgo)));
-		return riesgo;
+		return riesgo.toFixed(2);
 	}
 }
 
-console.log(
-	`Resultado`,
-	calcularRiesgoInfarto(
-		edad,
-		colesterol,
-		presionSistolica,
-		hdl,
-		medicina,
-		diabetes,
-		cigarrillo,
-		sexoBiologico
-	).toFixed(2)
-);
+function MostrarPantallaCierre() {
+	$('.seccion-ini').hide();
+	$('.seccion-cierre').show();
+}
+
+// console.log(
+// 	`Resultado`,
+// 	calcularRiesgoInfarto(
+// 		edad,
+// 		colesterol,
+// 		presionSistolica,
+// 		hdl,
+// 		medicina,
+// 		diabetes,
+// 		cigarrillo,
+// 		sexoBiologico
+// 	).toFixed(2)
+// );

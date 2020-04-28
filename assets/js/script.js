@@ -51,7 +51,7 @@
 							var textoResultado = '';
 							switch (1) {
 								case 1:
-									textoResultado = '¡Tu riesgo es bajo!';
+									textoResultado = '¡Tu riesgo es ---!';
 									break;
 								case 2:
 									textoResultado = '¡Tu riesgo es medio!';

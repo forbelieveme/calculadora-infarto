@@ -20,6 +20,14 @@
 		<link href="assets/css/estilos.css" rel="stylesheet" />
 	</head>
 	<body class="bg-light">
+		<!-- <form id="formulario">
+			<label for="fname">First name:</label><br />
+			<input type="text" id="fname" name="fname" ><br />
+			<label for="lname">Last name:</label><br />
+			<input type="text" id="lname" name="lname" /><br />
+			<input type="button" value="Submit" id="submit" onClick="imprimir()" />
+		</form> -->
+
 		<div class="contGen wh-register">
 			<div class="text-center marg-titulo">
 				<p class="txt-titulo">Calcula tu riesgo cardiovascular</p>
@@ -38,6 +46,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<form
+									id="formulario"
 									class="needs-validation marg-form"
 									novalidate
 									onsubmit="return false"
@@ -53,10 +62,10 @@
 												>
 													<input
 														id="mujer"
-														name="radio-genero"
+														name="sexoBiologico"
 														type="radio"
 														class="custom-control-input"
-														value="mujer"
+														value="true"
 														required
 													/>
 													<label class="custom-control-label" for="mujer"
@@ -68,10 +77,10 @@
 												>
 													<input
 														id="hombre"
-														name="radio-genero"
+														name="sexoBiologico"
 														type="radio"
 														class="custom-control-input"
-														value="hombre"
+														value="false"
 														checked
 														required
 													/>
@@ -93,10 +102,10 @@
 												>
 													<input
 														id="si1"
-														name="radio-diabetico"
+														name="diabetes"
 														type="radio"
 														class="custom-control-input"
-														value="si"
+														value="true"
 														required
 													/>
 													<label class="custom-control-label" for="si1"
@@ -108,10 +117,10 @@
 												>
 													<input
 														id="no1"
-														name="radio-diabetico"
+														name="diabetes"
 														type="radio"
 														class="custom-control-input"
-														value="no"
+														value="false"
 														checked
 														required
 													/>
@@ -135,10 +144,10 @@
 												>
 													<input
 														id="si2"
-														name="radio-enfermo"
+														name="medicina"
 														type="radio"
 														class="custom-control-input"
-														value="si"
+														value="true"
 														required
 													/>
 													<label class="custom-control-label" for="si2"
@@ -150,10 +159,10 @@
 												>
 													<input
 														id="no2"
-														name="radio-enfermo"
+														name="medicina"
 														type="radio"
 														class="custom-control-input"
-														value="no"
+														value="false"
 														checked
 														required
 													/>
@@ -175,10 +184,10 @@
 												>
 													<input
 														id="si3"
-														name="radio-fumador"
+														name="cigarrillo"
 														type="radio"
 														class="custom-control-input"
-														value="si"
+														value="true"
 														required
 													/>
 													<label class="custom-control-label" for="si3"
@@ -190,10 +199,10 @@
 												>
 													<input
 														id="no3"
-														name="radio-fumador"
+														name="cigarrillo"
 														type="radio"
 														class="custom-control-input"
-														value="no"
+														value="false"
 														checked
 														required
 													/>
@@ -209,20 +218,19 @@
 											<label for="sel-hora">Colesterol total:</label>
 										</div>
 										<div class="col-sm-6">
-											<select
-												class="custom-select d-block w-100"
-												id="sel-colesterol"
+											<input
+												type="number"
+												name="colesterol"
+												class="form-control cust-inp"
+												id="input-colesterol"
+												min="10"
+												max="500"
+												placeholder=""
 												required
-											>
-												<option value="">Seleccione...</option>
-												<option value="1">Menos de 150</option>
-												<option value="2">Entre 150 y 199</option>
-												<option value="3">Entre 200 y 249</option>
-												<option value="4">Entre 250 y 299</option>
-												<option value="5">300 y más</option>
-											</select>
+											/>
 											<div class="invalid-feedback">
-												Por favor, seleccione una opción.
+												Por favor, ingrese un rango de colesterol válido (Entre
+												10 y 500 mg/dL).
 											</div>
 										</div>
 									</div>
@@ -231,20 +239,40 @@
 											<label for="sel-hora">Tensión sistólica:</label>
 										</div>
 										<div class="col-sm-6">
-											<select
-												class="custom-select d-block w-100"
-												id="sel-tension"
+											<input
+												type="number"
+												name="presionSistolica"
+												class="form-control cust-inp"
+												id="input-tesionSistolica"
+												min="10"
+												max="500"
+												placeholder=""
 												required
-											>
-												<option value="">Seleccione...</option>
-												<option value="1">Entre 100 y 119</option>
-												<option value="2">Entre 120 y 139</option>
-												<option value="3">Entre 140 y 159</option>
-												<option value="4">Entre 160 y 179</option>
-												<option value="5">180 y más</option>
-											</select>
+											/>
 											<div class="invalid-feedback">
-												Por favor, seleccione una opción.
+												Por favor, ingrese una presión sistólica válida (Entre
+												10 y 500 mg/dL).
+											</div>
+										</div>
+									</div>
+									<div class="row mb-3">
+										<div class="label-form col-sm-6">
+											<label for="sel-hora">Lipoproteínas:</label>
+										</div>
+										<div class="col-sm-6">
+											<input
+												type="number"
+												name="hdl"
+												class="form-control cust-inp"
+												id="input-tesionSistolica"
+												min="10"
+												max="500"
+												placeholder=""
+												required
+											/>
+											<div class="invalid-feedback">
+												Por favor, ingrese una rango válido (Entre 10 y 500
+												mg/dL).
 											</div>
 										</div>
 									</div>
@@ -255,6 +283,7 @@
 										<div class="col-sm-6">
 											<input
 												type="number"
+												name="edad"
 												class="form-control cust-inp"
 												id="input-edad"
 												min="18"
@@ -317,40 +346,7 @@
 			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 			crossorigin="anonymous"
 		></script>
-		<script src="js/main.js"></script>
-		<script>
-			// Example starter JavaScript for disabling form submissions if there are invalid fields
-			(function () {
-				'use strict';
-
-				window.addEventListener(
-					'load',
-					function () {
-						// Fetch all the forms we want to apply custom Bootstrap validation styles to
-						var forms = document.getElementsByClassName('needs-validation');
-
-						// Loop over them and prevent submission
-						var validation = Array.prototype.filter.call(forms, function (
-							form
-						) {
-							form.addEventListener(
-								'submit',
-								function (event) {
-									if (form.checkValidity() === false) {
-										event.preventDefault();
-										event.stopPropagation();
-									} else {
-										CalcularRiesgoCardio();
-									}
-									form.classList.add('was-validated');
-								},
-								false
-							);
-						});
-					},
-					false
-				);
-			})();
-		</script>
+		<script src="assets/js/framingham.js"></script>
+		<script src="assets/js/script.js"></script>
 	</body>
 </html>

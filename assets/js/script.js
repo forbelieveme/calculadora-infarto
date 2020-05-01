@@ -17,7 +17,7 @@
 				form[`"${formulario.elements[i].name}"`] = formulario.elements[i].value;
 			}
 		}
-		console.log(`sucess`, form);
+		// console.log(`sucess`, form);
 	}
 
 	window.addEventListener(

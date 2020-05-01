@@ -1,52 +1,3 @@
-// let edad = 70;
-// let colesterol = 210;
-// let presionSistolica = 140;
-// let hdl = 80;
-// // // lipoproteínas de alta densidad (HDL)
-// let medicina = true;
-// let diabetes = true;
-// let cigarrillo = true;
-// let sexoBiologico = false;
-// // femenino = true masculino = false
-
-// let form = {};
-
-// var formulario = document.getElementById('formulario');
-
-// function obtenerDatos() {
-// 	for (let i = 0; i < formulario.length - 1; i++) {
-// 		if (formulario.elements[i].checked) {
-// 			form[`${formulario.elements[i].name}`] = formulario.elements[i].value;
-// 			continue;
-// 		}
-// 		if (formulario.elements[i].type == 'number') {
-// 			form[`${formulario.elements[i].name}`] = formulario.elements[i].value;
-// 		}
-// 	}
-// 	console.log(`sucess`, form);
-// }
-
-let constantes = {
-	cteDiabetesMujer: 0.69154,
-	cteDiabetesHombre: 0.57367,
-	cteMedicinaMujerTrue: 2.82263,
-	cteMedicinaHombreTrue: 1.99881,
-	cteMedicinaMujerFalse: 2.76157,
-	cteMedicinaHombreFalse: 1.93303,
-	cteCigarrilloMujer: 0.52873,
-	cteCigarrilloHombre: 0.65451,
-	cteEdadMujer: 2.32888,
-	cteEdadHombre: 3.06117,
-	cteColesterolMujer: 1.20904,
-	cteColesterolHombre: 1.1237,
-	cteHDLMujer: 0.70833,
-	cteHDLHombre: 0.93263,
-	cteFactorRiesgoMujer: 26.1931,
-	cteFactorRiesgoHombre: 23.9802,
-	cteRiesgoMujer: 0.95012,
-	cteRiesgoHombre: 0.88936,
-};
-
 function calcularRiesgoInfarto(
 	edad,
 	colesterol,
@@ -57,6 +8,15 @@ function calcularRiesgoInfarto(
 	cigarrillo,
 	sexoBiologico
 ) {
+	let constantes;
+	$.ajax({
+		url: 'assets/php/constantes.php',
+		type: 'POST',
+		async: false,
+		success: function (datos) {
+			constantes = datos;
+		},
+	});
 	if (sexoBiologico) {
 		let varDiabetes = () => {
 			if (diabetes) return constantes.cteDiabetesMujer;
@@ -118,16 +78,3 @@ function MostrarPantallaCierre() {
 	$('.seccion-cierre').show();
 }
 
-// console.log(
-// 	`Resultado`,
-// 	calcularRiesgoInfarto(
-// 		edad,
-// 		colesterol,
-// 		presionSistolica,
-// 		hdl,
-// 		medicina,
-// 		diabetes,
-// 		cigarrillo,
-// 		sexoBiologico
-// 	).toFixed(2)
-// );

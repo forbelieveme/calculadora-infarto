@@ -42,6 +42,18 @@ function calcularRiesgoInfarto(
 		let riesgo =
 			100 *
 			(1 - Math.pow(constantes.cteRiesgoMujer, Math.pow(Math.E, factorRiesgo)));
+
+		insertarResultado(
+			edad,
+			colesterol,
+			presionSistolica,
+			hdl,
+			medicina,
+			diabetes,
+			cigarrillo,
+			sexoBiologico,
+			riesgo
+		);
 		return riesgo.toFixed(2);
 	} else if (!sexoBiologico) {
 		let varDiabetes = () => {
@@ -69,6 +81,17 @@ function calcularRiesgoInfarto(
 			100 *
 			(1 -
 				Math.pow(constantes.cteRiesgoHombre, Math.pow(Math.E, factorRiesgo)));
+		insertarResultado(
+			edad,
+			colesterol,
+			presionSistolica,
+			hdl,
+			medicina,
+			diabetes,
+			cigarrillo,
+			sexoBiologico,
+			riesgo
+		);
 		return riesgo.toFixed(2);
 	}
 }
@@ -78,3 +101,41 @@ function MostrarPantallaCierre() {
 	$('.seccion-cierre').show();
 }
 
+function insertarResultado(
+	edad,
+	colesterolTotal,
+	tensionSistolica,
+	hdl,
+	medicina,
+	diabetes,
+	cigarrillo,
+	sexoBiologico,
+	riesgo
+) {
+	let boolSexoBiologico = () => (sexoBiologico == 'true' ? 1 : 0);
+	let boolMedicina = () => (medicina == 'true' ? 1 : 0);
+	let boolDiabetes = () => (diabetes == 'true' ? 1 : 0);
+	let boolCigarrillo = () => (cigarrillo == 'true' ? 1 : 0);
+
+	$.ajax({
+		url: 'assets/php/resultados.php',
+		type: 'POST',
+		data: JSON.stringify({
+			edad,
+			colesterolTotal,
+			tensionSistolica,
+			hdl,
+			medicina: boolMedicina(),
+			diabetes: boolDiabetes(),
+			cigarrillo: boolCigarrillo(),
+			sexoBiologico: boolSexoBiologico(),
+			resultado: riesgo,
+		}),
+		success: function (datos) {
+			console.log('success', datos);
+		},
+		error: function (datos) {
+			console.log('error', datos.responseText);
+		},
+	});
+}

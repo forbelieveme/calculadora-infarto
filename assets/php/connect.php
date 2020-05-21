@@ -5,8 +5,8 @@ class Database
 {
     private $host = 'localhost';
     private $db_name = 'meccanim_calculadora_liga';
-    private $username = 'root';
-    private $password = '';
+    private $username = 'meccanim_calcLig';
+    private $password = 'calculadora2020';
     private $conn;
 
     public function connect()

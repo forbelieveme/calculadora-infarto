@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultado = ($data->{"resultado"});
 
     $sql = "INSERT INTO resultados (sexo_biologico, diabetes, medicina, cigarrillo, colesterol_total, tension_sistolica, hdl, edad, resultado)
-    VALUES ($sexoBiologico, $diabetes, $medicina, $cigarrillo, $colesterolTotal, $tensionSistolica, $hdl, $edad, $resultado);";
+    VALUES ('$sexoBiologico', '$diabetes', '$medicina', '$cigarrillo', $colesterolTotal, $tensionSistolica, $hdl, $edad, $resultado);";
 
     try {
         $result = mysqli_query($db, $sql);

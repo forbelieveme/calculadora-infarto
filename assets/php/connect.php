@@ -4,7 +4,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 class Database
 {
     private $host = 'localhost';
-    private $db_name = 'calculadora_liga';
+    private $db_name = 'meccanim_calculadora_liga';
     private $username = 'root';
     private $password = '';
     private $conn;

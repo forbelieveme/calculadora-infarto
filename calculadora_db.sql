@@ -1,6 +1,4 @@
-CREATE DATABASE calculadora_liga;
-
-USE calculadora_liga;
+CREATE DATABASE meccanim_calculadora_liga;
 
 CREATE TABLE resultados (
     id_resultado INT NOT NULL AUTO_INCREMENT,
@@ -13,7 +11,7 @@ CREATE TABLE resultados (
     hdl INT NOT NULL ,
     edad INT NOT NULL ,
     resultado INT NOT NULL ,
-    fecha DATE NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+    fecha TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
 PRIMARY KEY (`id_resultado`)) ENGINE = InnoDB;
 
 -- INSERT INTO resultados (sexo_biologico, diabetes, medicina, cigarrillo, colesterol_total, tension_sistolica, hdl, edad, resultado)

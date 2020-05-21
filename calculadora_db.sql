@@ -2,15 +2,15 @@ CREATE DATABASE meccanim_calculadora_liga;
 
 CREATE TABLE resultados (
     id_resultado INT NOT NULL AUTO_INCREMENT,
-    sexo_biologico BOOLEAN NOT NULL ,
-    diabetes BOOLEAN NOT NULL ,
-    medicina BOOLEAN NOT NULL ,
-    cigarrillo BOOLEAN NOT NULL ,
-    colesterol_total INT NOT NULL ,
-    tension_sistolica INT NOT NULL ,
-    hdl INT NOT NULL ,
+    sexo_biologico VARCHAR(10) NOT NULL ,
+    diabetes VARCHAR(10) NOT NULL ,
+    medicina VARCHAR(10) NOT NULL ,
+    cigarrillo VARCHAR(10) NOT NULL ,
+    colesterol_total FLOAT NOT NULL ,
+    tension_sistolica FLOAT NOT NULL ,
+    hdl FLOAT NOT NULL ,
     edad INT NOT NULL ,
-    resultado INT NOT NULL ,
+    resultado FLOAT NOT NULL ,
     fecha TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
 PRIMARY KEY (`id_resultado`)) ENGINE = InnoDB;
 

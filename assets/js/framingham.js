@@ -112,10 +112,10 @@ function insertarResultado(
 	sexoBiologico,
 	riesgo
 ) {
-	let boolSexoBiologico = () => (sexoBiologico == 'true' ? 1 : 0);
-	let boolMedicina = () => (medicina == 'true' ? 1 : 0);
-	let boolDiabetes = () => (diabetes == 'true' ? 1 : 0);
-	let boolCigarrillo = () => (cigarrillo == 'true' ? 1 : 0);
+	let boolSexoBiologico = () => (sexoBiologico == 'true' ? 'mujer' : 'hombre');
+	let boolMedicina = () => (medicina == 'true' ? 'si' : 'no');
+	let boolDiabetes = () => (diabetes == 'true' ? 'si' : 'no');
+	let boolCigarrillo = () => (cigarrillo == 'true' ? 'si' : 'no');
 
 	$.ajax({
 		url: 'assets/php/resultados.php',

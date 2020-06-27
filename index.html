@@ -24,7 +24,7 @@
 			<div class="text-center marg-titulo">
 				<img src="assets/img/logoliga.png" class="" alt="logo" />
 				<br /><br />
-				<p class="txt-titulo">Calcula tu riesgo cardiovascular</p>
+				<p class="txt-titulo">¡Empecemos!</p>
 			</div>
 			<hr class="mb-4" />
 			<section class="seccion-ini">
@@ -45,6 +45,7 @@
 									novalidate
 									onsubmit="return false"
 								>
+									<!-- Seccion Sexo Biologico -->
 									<div class="row mb-3">
 										<div class="label-form col-sm-7">
 											<label for="nombre">Género: </label>
@@ -84,6 +85,31 @@
 											</div>
 										</div>
 									</div>
+									<!-- Seccion Sexo Biologico -->
+									<!-- Seccion Edad -->
+									<div class="row mb-3">
+										<div class="label-form col-sm-7">
+											<label for="celular">Edad:</label>
+										</div>
+										<div class="col-sm-5">
+											<input
+												type="number"
+												name="edad"
+												class="form-control cust-inp"
+												id="input-edad"
+												min="18"
+												max="100"
+												placeholder="Seleccione"
+												required
+											/>
+											<div class="invalid-feedback">
+												Por favor, ingrese una edad válida (Entre 18 y 100
+												años).
+											</div>
+										</div>
+									</div>
+									<!-- Seccion Edad -->
+									<!-- Seccion Diabetes -->
 									<div class="row mb-3">
 										<div class="label-form col-sm-7">
 											<label for="nombre">¿Eres diabétic@?</label>
@@ -123,56 +149,8 @@
 											</div>
 										</div>
 									</div>
-									<div class="row mb-3">
-										<div class="label-form col-sm-6 col-10">
-											<label for="nombre"
-												>¿Has sufrido alguna enfermedad cardiovascular?</label
-											>
-										</div>
-										<div class="col-sm-1 col-2">
-											<div class="help-tip">
-												<p>
-													Lorem ipsum dolor sit amet consectetur adipisicing
-													elit. Iure nemo laborum unde, a corrupti laboriosam
-													dolores.
-												</p>
-											</div>
-										</div>
-										<div class="col-sm-5">
-											<div class="input-group">
-												<div
-													class="custom-control custom-radio custom-control-inline"
-												>
-													<input
-														id="si2"
-														name="medicina"
-														type="radio"
-														class="custom-control-input"
-														value="true"
-														required
-													/>
-													<label class="custom-control-label" for="si2"
-														>Si</label
-													>
-												</div>
-												<div
-													class="custom-control custom-radio custom-control-inline"
-												>
-													<input
-														id="no2"
-														name="medicina"
-														type="radio"
-														class="custom-control-input"
-														value="false"
-														required
-													/>
-													<label class="custom-control-label" for="no2"
-														>No</label
-													>
-												</div>
-											</div>
-										</div>
-									</div>
+									<!-- Seccion Diabetes -->
+									<!-- Seccion Cigarrillo -->
 									<div class="row mb-3">
 										<div class="label-form col-sm-7">
 											<label for="nombre">¿Fumas?</label>
@@ -212,6 +190,58 @@
 											</div>
 										</div>
 									</div>
+									<!-- Seccion Cigarrillo -->
+									<!-- Seccion Enfermedad Cardiovascular -->
+									<div class="row mb-3">
+										<div class="label-form col-sm-6 col-10">
+											<label for="nombre">
+												¿Has sufrido alguna enfermedad cardiovascular?
+											</label>
+										</div>
+										<div class="col-sm-1 col-2">
+											<div class="help-tip">
+												<p>
+													Algunas como: Infarto agudo de miocardio,
+													insuficiencia cardíaca, angina de pecho, arritmias o
+													hipertensión.
+												</p>
+											</div>
+										</div>
+										<div class="col-sm-5">
+											<div class="input-group">
+												<div
+													class="custom-control custom-radio custom-control-inline"
+												>
+													<input
+														id="si2"
+														name="medicina"
+														type="radio"
+														class="custom-control-input"
+														value="true"
+														required
+													/>
+													<label class="custom-control-label" for="si2"
+														>Si</label
+													>
+												</div>
+											</div>
+											<div
+												class="custom-control custom-radio custom-control-inline"
+											>
+												<input
+													id="no2"
+													name="medicina"
+													type="radio"
+													class="custom-control-input"
+													value="false"
+													required
+												/>
+												<label class="custom-control-label" for="no2">No</label>
+											</div>
+										</div>
+									</div>
+									<!-- Seccion Enfermedad Cardiovascular -->
+									<!-- Seccion Colesterol Total -->
 									<div class="row mb-3">
 										<div class="label-form col-sm-6 col-10">
 											<label for="sel-hora">Colesterol total:</label>
@@ -219,9 +249,8 @@
 										<div class="col-sm-1 col-2">
 											<div class="help-tip">
 												<p>
-													Colesterol total: Lorem ipsum dolor sit amet
-													consectetur adipisicing elit. Iure nemo laborum unde,
-													a corrupti laboriosam dolores.
+													Consulte en sus exámenes de laboratorio el ítem de
+													Colesterol total
 												</p>
 											</div>
 										</div>
@@ -242,36 +271,8 @@
 											</div>
 										</div>
 									</div>
-									<div class="row mb-3">
-										<div class="label-form col-sm-6 col-10">
-											<label for="sel-hora">Tensión sistólica:</label>
-										</div>
-										<div class="col-sm-1 col-2">
-											<div class="help-tip">
-												<p>
-													Tensión sistólica: Lorem ipsum dolor sit amet
-													consectetur adipisicing elit. Iure nemo laborum unde,
-													a corrupti laboriosam dolores.
-												</p>
-											</div>
-										</div>
-										<div class="col-sm-5">
-											<input
-												type="number"
-												name="presionSistolica"
-												class="form-control cust-inp"
-												id="input-tesionSistolica"
-												min="60"
-												max="300"
-												placeholder="Seleccione"
-												required
-											/>
-											<div class="invalid-feedback">
-												Por favor, ingrese una presión sistólica válida (Entre
-												60 y 300 mg/dL).
-											</div>
-										</div>
-									</div>
+									<!-- Seccion Colesterol Total -->
+									<!-- Seccion Tension HDL -->
 									<div class="row mb-3">
 										<div class="label-form col-sm-6 col-10">
 											<label for="sel-hora">HDL:</label>
@@ -279,9 +280,8 @@
 										<div class="col-sm-1 col-2">
 											<div class="help-tip">
 												<p>
-													HDL: Lorem ipsum dolor sit amet consectetur
-													adipisicing elit. Iure nemo laborum unde, a corrupti
-													laboriosam dolores.
+													Consulte en sus exámenes de laboratorio el ítem de
+													colesterol HDL o Colesterol de Alta Densidad
 												</p>
 											</div>
 										</div>
@@ -302,27 +302,38 @@
 											</div>
 										</div>
 									</div>
+									<!-- Seccion Tension HDL -->
+									<!-- Seccion Tension Sistolica -->
 									<div class="row mb-3">
-										<div class="label-form col-sm-7">
-											<label for="celular">Edad:</label>
+										<div class="label-form col-sm-6 col-10">
+											<label for="sel-hora">Tensión sistólica:</label>
+										</div>
+										<div class="col-sm-1 col-2">
+											<div class="help-tip">
+												<p>
+													Corresponde al número superior cuando se toma la
+													presión arterial. Ejemplo: 120/80.
+												</p>
+											</div>
 										</div>
 										<div class="col-sm-5">
 											<input
 												type="number"
-												name="edad"
+												name="presionSistolica"
 												class="form-control cust-inp"
-												id="input-edad"
-												min="18"
-												max="100"
+												id="input-tesionSistolica"
+												min="60"
+												max="300"
 												placeholder="Seleccione"
 												required
 											/>
 											<div class="invalid-feedback">
-												Por favor, ingrese una edad válida (Entre 18 y 100
-												años).
+												Por favor, ingrese una presión sistólica válida (Entre
+												60 y 300 mg/dL).
 											</div>
 										</div>
 									</div>
+									<!-- Seccion Tension Sistolica -->
 
 									<button class="btn btn-md btn-block btn-reg" type="submit">
 										Calcular

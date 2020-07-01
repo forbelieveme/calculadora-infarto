@@ -98,7 +98,7 @@
 												class="form-control cust-inp"
 												id="input-edad"
 												min="18"
-												max="100"
+												max="120"
 												placeholder="Seleccione"
 												required
 											/>
@@ -224,19 +224,21 @@
 														>Si</label
 													>
 												</div>
-											</div>
-											<div
-												class="custom-control custom-radio custom-control-inline"
-											>
-												<input
-													id="no2"
-													name="medicina"
-													type="radio"
-													class="custom-control-input"
-													value="false"
-													required
-												/>
-												<label class="custom-control-label" for="no2">No</label>
+												<div
+													class="custom-control custom-radio custom-control-inline"
+												>
+													<input
+														id="no2"
+														name="medicina"
+														type="radio"
+														class="custom-control-input"
+														value="false"
+														required
+													/>
+													<label class="custom-control-label" for="no2"
+														>No</label
+													>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -260,14 +262,14 @@
 												name="colesterol"
 												class="form-control cust-inp"
 												id="input-colesterol"
-												min="70"
-												max="1200"
+												min="10"
+												max="800"
 												placeholder="Seleccione"
 												required
 											/>
 											<div class="invalid-feedback">
 												Por favor, ingrese un rango de colesterol válido (Entre
-												10 y 500 mg/dL).
+												10 y 800 mg/dL).
 											</div>
 										</div>
 									</div>
@@ -275,7 +277,7 @@
 									<!-- Seccion Tension HDL -->
 									<div class="row mb-3">
 										<div class="label-form col-sm-6 col-10">
-											<label for="sel-hora">HDL:</label>
+											<label for="sel-hora">Colesterol HDL:</label>
 										</div>
 										<div class="col-sm-1 col-2">
 											<div class="help-tip">
@@ -348,10 +350,10 @@
 				<div class="sizePage">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="text-center">
+							<div class="text-center ">
 								<p class="txt-subtit">Tu resultado:</p>
-								<p class="txt-resultado"></p>
-								<p class="txt-descrip-res"></p>
+								<p class="txt-resultado text-justify"></p>
+								<!-- <p class="txt-descrip-res"></p> -->
 							</div>
 
 							<a href="." class="btn btn-md btn-block btn-reg">Volver</a>

@@ -47,9 +47,29 @@
 								form.sexoBiologico.value
 							);
 
-							$('.txt-resultado').text(
-								`Tu riesgo de sufrir de una enfermedad cardiovascular dentro de 10 años es de :`
-							);
+							if (resultado < 10) {
+								// // Tu riesgo de sufrir una enfermedad cardiovascular  en los próximos 10 años es Baja. Sin embargo, te recomendamos hacer ejercicio, 30 minutos, 3 veces por semana; llevar una dieta saludable, rica en frutas y verduras, bajo consumo de sal y de alcohol.
+								$('.txt-resultado').html(
+									`Tu riesgo de sufrir una enfermedad cardiovascular en los próximos 
+									10 años es <b>Baja</b>. Sin embargo, te recomendamos hacer ejercicio, 
+									30 minutos, 3 veces por semana; llevar una dieta saludable, rica 
+									en frutas y verduras, bajo consumo de sal y de alcohol.`
+								);
+							} else if (resultado >= 10 && resultado <= 20) {
+								$('.txt-resultado').html(
+									`Tu riesgo de sufrir una enfermedad cardiovascular en los próximos
+									10 años es <b>Medio</b>. Sin embargo, te recomendamos hacer ejercicio, 
+									30 minutos, 3 veces por semana; llevar una dieta saludable, rica 
+									en frutas y verduras, bajo consumo de sal y de alcohol.`
+								);
+							} else if (resultado > 20) {
+								$('.txt-resultado').html(
+									`Tu riesgo de sufrir una enfermedad cardiovascular en los próximos 
+									10 años es <b>Alto</b>. Sin embargo, te recomendamos hacer ejercicio, 
+									30 minutos, 3 veces por semana; llevar una dieta saludable, rica 
+									en frutas y verduras, bajo consumo de sal y de alcohol.`
+								);
+							}
 
 							$('.txt-descrip-res').text(`${resultado}%`);
 							MostrarPantallaCierre();
